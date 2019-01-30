@@ -1,18 +1,38 @@
 document.querySelector("#date").textContent = new Date().toLocaleDateString();
-var list = document.getElementById("todolist")
-var lis = document.querySelectorAll("li");
+// var lis = document.querySelectorAll("li");
+//
+// for (var i=0; i<lis.length; i++) {
+//     lis[i].addEventListener("mouseover", function(){
+//         this.classList.add("selected");
+//     });
+//     lis[i].addEventListener("mouseout", function(){
+//         this.classList.remove("selected");
+//     });
+//     // lis[i].addEventListener("click", function(){
+//     //     this.classList.toggle("done");
+//     // });
+// }
 
-for (var i=0; i<lis.length; i++) {
-    lis[i].addEventListener("mouseover", function(){
-        this.classList.add("selected");
-    });
-    lis[i].addEventListener("mouseout", function(){
-        this.classList.remove("selected");
-    });
-    lis[i].addEventListener("click", function(){
-        this.classList.toggle("done");
-    });
-}
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('done');
+  }
+}, false);
+
+list.addEventListener('mouseover', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.add('selected');
+  }
+}, false);
+
+list.addEventListener('mouseout', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.remove('selected');
+  }
+}, false);
+
+
 
 function addTodo() {
     var entry = document.createElement("li");
