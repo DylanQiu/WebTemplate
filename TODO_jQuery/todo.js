@@ -1,7 +1,7 @@
 // completed
-$("ul").on("click", "li", function(){
+$("ul").on("click", "li", function () {
     $(this).toggleClass("completed");
-});
+  });
 
 // delete on X
 $("ul").on("click", "span", function(event){
